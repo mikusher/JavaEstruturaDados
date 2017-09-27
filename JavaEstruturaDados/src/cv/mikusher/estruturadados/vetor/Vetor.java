@@ -129,4 +129,34 @@ public class Vetor {
         }
         return this.elementos[posicao];
     }
+
+
+
+
+
+    // returna um true ou false na busca - busca sequencial
+    public boolean busca(String elemento) {
+
+        for (int i = 0; i < this.tamanho; i++) {
+            if (this.elementos[i].equalsIgnoreCase(elemento)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
+
+    // retorna a posição na busca - busca sequencial
+    public int busca2(String elemento) {
+
+        for (int i = 0; i < this.tamanho; i++) {
+            if (this.elementos[i].equalsIgnoreCase(elemento)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
