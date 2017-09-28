@@ -44,6 +44,8 @@ public class Vetor {
      */
     public void adiciona(String elemento) {
 
+        this.aumentaCapacidade();
+
         for (int i = 0; i < elementos.length; i++) {
             if (this.elementos[i] == null) {
                 this.elementos[i] = elemento;
@@ -60,7 +62,11 @@ public class Vetor {
     // metodo para adicionar elemento
     public boolean verificarSeDisponivel() {
 
-        boolean resultado = this.tamanho < this.elementos.length ? true : false;
+        boolean resultado = this.tamanho <= this.elementos.length ? true : false;
+
+        if (resultado) {
+            this.aumentaCapacidade();
+        }
         return resultado;
     }
 
@@ -75,7 +81,7 @@ public class Vetor {
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
         } else {
-            throw new Exception("Vector Cheio");
+            throw new Exception("Vector Cheio, não foi possivel aumentar ");
         }
     }
 
@@ -86,12 +92,34 @@ public class Vetor {
     // metodo para adicionar elemento
     public boolean adiciona3(String elemento) {
 
-        if (this.tamanho < this.elementos.length) {
+        if (verificarSeDisponivel()) {
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
             return true;
         }
         return false;
+    }
+
+
+
+
+
+    // inserir um elemento em qualquer posição do Vetor
+    public boolean adiciona3(int posicao, String elemento) {
+
+        if (!(posicao >= 0 && posicao < this.tamanho)) {
+            throw new IllegalArgumentException("Posição Invalida");
+        }
+
+        this.aumentaCapacidade();
+        // mover os elementos
+        for (int i = this.tamanho - 1; i >= posicao; i--) {
+            this.elementos[i + 1] = this.elementos[i];
+        }
+        this.elementos[posicao] = elemento;
+        this.tamanho++;
+
+        return true;
     }
 
 
@@ -135,7 +163,7 @@ public class Vetor {
 
 
     // returna um true ou false na busca - busca sequencial
-    public boolean busca(String elemento) {
+    public boolean buscaElemento(String elemento) {
 
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equalsIgnoreCase(elemento)) {
@@ -150,7 +178,7 @@ public class Vetor {
 
 
     // retorna a posição na busca - busca sequencial
-    public int busca2(String elemento) {
+    public int buscaElementoID(String elemento) {
 
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equalsIgnoreCase(elemento)) {
@@ -158,5 +186,53 @@ public class Vetor {
             }
         }
         return -1;
+    }
+
+
+
+
+
+    // adicionar capacidade ao meu vetor
+    private void aumentaCapacidade() {
+
+        if (this.tamanho == this.elementos.length) {
+            int tamanhoAumentado = (this.elementos.length * 2);
+            String[] elementosNovos = new String[tamanhoAumentado];
+            for (int i = 0; i < this.elementos.length; i++) {
+                elementosNovos[i] = this.elementos[i];
+            }
+            this.elementos = elementosNovos;
+        }
+    }
+
+
+
+
+
+    // remover um elemento do vetor
+    public void remove(int posicao) {
+
+        if (!(posicao >= 0 && posicao < this.tamanho)) {
+            throw new IllegalArgumentException("Posição Invalida");
+        }
+        for (int i = posicao; i < this.tamanho - 1; i++) {
+            this.elementos[i] = this.elementos[i + 1];
+        }
+        this.tamanho--;
+    }
+
+
+
+
+
+    public void buscarRevomerElemento(String elemento) {
+
+        int _posicao = buscaElementoID(elemento);
+
+        if (_posicao > -1) {
+            remove(_posicao);
+        } else {
+            System.out.println("Elemento não encontrado");
+        }
     }
 }

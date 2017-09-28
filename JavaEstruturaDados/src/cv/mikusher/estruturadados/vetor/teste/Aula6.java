@@ -24,9 +24,9 @@ public class Aula6 {
         vetor.adiciona3("elemento2");
         vetor.adiciona3("elemento3");
 
-        System.out.println(vetor.busca("elemento3"));
-        System.out.println(vetor.busca2("elemento3"));
-        System.out.println(vetor.busca2("elemento5"));
+        System.out.println(vetor.buscaElemento("elemento3"));
+        System.out.println(vetor.buscaElementoID("elemento3"));
+        System.out.println(vetor.buscaElementoID("elemento5"));
 
     }
 
