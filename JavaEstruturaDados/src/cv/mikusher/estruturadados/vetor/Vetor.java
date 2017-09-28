@@ -178,7 +178,7 @@ public class Vetor {
 
 
     // retorna a posição na busca - busca sequencial
-    public int buscaElementoID(String elemento) {
+    public int buscaIDelemento(String elemento) {
 
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equalsIgnoreCase(elemento)) {
@@ -227,7 +227,7 @@ public class Vetor {
 
     public void buscarRevomerElemento(String elemento) {
 
-        int _posicao = buscaElementoID(elemento);
+        int _posicao = buscaIDelemento(elemento);
 
         if (_posicao > -1) {
             remove(_posicao);
