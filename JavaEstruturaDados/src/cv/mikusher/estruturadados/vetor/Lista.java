@@ -66,7 +66,7 @@ public class Lista<T> {
 
         this.aumentaCapacidade();
 
-        for (int i = 0; i < elementos.length; i++) {
+        for (int i = 0; i < this.elementos.length; i++) {
             if (this.elementos[i] == null) {
                 this.elementos[i] = elemento;
                 break;

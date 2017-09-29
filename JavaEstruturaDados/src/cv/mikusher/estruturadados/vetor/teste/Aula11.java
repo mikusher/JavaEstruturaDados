@@ -19,7 +19,7 @@ public class Aula11 {
 
     public static void main(String[] args) {
 
-        Lista<Contato> vetor = new Lista<>(2);
+        Lista<Contato> vetor = new Lista<Contato>(2);
 
         Contato c1 = new Contato("Contato 1", "123423", "cont1@mail.com");
         Contato c2 = new Contato("Contato 2", "223423", "cont2@mail.com");
