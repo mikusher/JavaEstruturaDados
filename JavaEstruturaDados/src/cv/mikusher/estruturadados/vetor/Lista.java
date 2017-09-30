@@ -37,6 +37,15 @@ public class Lista<T> {
 
 
 
+    public Lista() {
+
+        this(10);
+    }
+
+
+
+
+
     // primeira solução
     public Lista(int capacidade, Class<T> tipoClasse) {
 
