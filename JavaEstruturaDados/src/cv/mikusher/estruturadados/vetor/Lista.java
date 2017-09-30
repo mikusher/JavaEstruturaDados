@@ -250,10 +250,23 @@ public class Lista<T> {
         this.tamanho--;
     }
 
+    // alguns pedidos da lista de exercicios
 
 
 
 
+
+    // remover tudo do vetor
+    public void removeAll() {
+
+        this.tamanho = 0;
+    }
+
+
+
+
+
+    // buscar e remover elementos
     public void buscarRevomerElemento(T elemento) {
 
         int _posicao = buscaIDelemento(elemento);
@@ -263,6 +276,18 @@ public class Lista<T> {
         } else {
             System.out.println("Elemento não encontrado");
         }
+    }
+
+
+
+
+
+    public int ultimoIndice() {
+
+        if (this.tamanho == 0) {
+            return -1;
+        }
+        return this.tamanho;
     }
 
 }
