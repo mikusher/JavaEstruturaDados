@@ -206,6 +206,15 @@ public class Lista<T> {
 
 
 
+    public T obtem(int posicao) {
+
+        return this.busca(posicao);
+    }
+
+
+
+
+
     // retorna a posição na busca - busca sequencial
     public int buscaIDelemento(T elemento) {
 
@@ -250,7 +259,19 @@ public class Lista<T> {
         this.tamanho--;
     }
 
+
+
+
+
     // alguns pedidos da lista de exercicios
+
+    public void remove(T elemento) {
+
+        int posicao = this.buscaIDelemento(elemento);
+        if (posicao > 1) {
+            this.remove(posicao);
+        }
+    }
 
 
 
@@ -259,7 +280,18 @@ public class Lista<T> {
     // remover tudo do vetor
     public void removeAll() {
 
+        // opcao 1
+        // this.elementos = (T[]) new Object[this.elementos.length];
+
+        // opcao 2
         this.tamanho = 0;
+
+        // opcao 3
+        // for (int i = 0; i < this.tamanho; i++) {
+        // this.elementos[i] = null;
+        // }
+        // this.tamanho = 0;
+
     }
 
 
@@ -267,7 +299,7 @@ public class Lista<T> {
 
 
     // buscar e remover elementos
-    public void buscarRevomerElemento(T elemento) {
+    public void buscarRemoverElemento(T elemento) {
 
         int _posicao = buscaIDelemento(elemento);
 
@@ -282,12 +314,30 @@ public class Lista<T> {
 
 
 
-    public int ultimoIndice() {
+    public int ultimoIndice(T elemento) {
 
-        if (this.tamanho == 0) {
-            return -1;
+        for (int i = this.tamanho - 1; i > 0; i--) {
+            if (this.elementos[i].equals(elemento)) {
+                return i;
+            }
         }
-        return this.tamanho;
+        return -1;
+    }
+
+
+
+
+
+    public boolean contem(T elemento) {
+
+        /*
+         * int posicao = buscaIDelemento(elemento);
+         * if (posicao>-1) {
+         * return true;
+         * }
+         * return false;
+         */
+        return buscaIDelemento(elemento) > -1;
     }
 
 }
