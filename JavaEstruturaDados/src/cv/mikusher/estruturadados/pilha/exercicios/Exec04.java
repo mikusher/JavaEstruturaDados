@@ -57,28 +57,28 @@ public class Exec04 {
         livro6.setAnoLancamento("2017");
         livro6.setIsbn("0392423");
 
-        // System.out.println("A pilha esta vazia? " + pilha.estaVazia());
-        //
-        // System.out.println("Empilhando os livros");
-        // pilha.empilha(livro1);
-        // pilha.empilha(livro2);
-        // pilha.empilha(livro3);
-        // pilha.empilha(livro4);
-        // pilha.empilha(livro5);
-        // pilha.empilha(livro6);
-        //
-        // System.out.println(pilha.tamanho() + " livros foram empilhado");
-        // System.out.println(pilha);
-        //
-        // System.out.println("A pilha esta vazia? " + pilha.estaVazia());
-        // System.out.println();
-        // System.out.println("Espiando o topo da pilha de livros " + pilha.topo());
-        //
-        // System.out.println("Desempilhando os livros");
-        // while (!pilha.estaVazia()) {
-        // System.out.println("Removendo livro: " + pilha.desimpilha());
-        // }
-        // System.out.println("Todos os livros removidos: " + pilha + " \nPilha Limpa: " + pilha.estaVazia());
+        System.out.println("A pilha esta vazia? " + pilha.isEmpty());
+
+        System.out.println("Empilhando os livros");
+        pilha.push(livro1);
+        pilha.push(livro2);
+        pilha.push(livro3);
+        pilha.push(livro4);
+        pilha.push(livro5);
+        pilha.push(livro6);
+
+        System.out.println(pilha.size() + " livros foram empilhado");
+        System.out.println(pilha);
+
+        System.out.println("A pilha esta vazia? " + pilha.isEmpty());
+        System.out.println();
+        System.out.println("Espiando o topo da pilha de livros " + pilha.peek());
+
+        System.out.println("Desempilhando os livros");
+        while (!pilha.isEmpty()) {
+            System.out.println("Removendo livro: " + pilha.pop());
+        }
+        System.out.println("Todos os livros removidos: " + pilha + " \nPilha Limpa: " + pilha.isEmpty());
     }
 
 }
