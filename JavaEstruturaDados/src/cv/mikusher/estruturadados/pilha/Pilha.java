@@ -15,6 +15,7 @@ import cv.mikusher.estruturadados.base.EstruturaEstatica;
 
 
 
+// conceitos de Fila usando o Queue - LIFO
 public class Pilha<T> extends EstruturaEstatica<T> {
 
     public Pilha() {

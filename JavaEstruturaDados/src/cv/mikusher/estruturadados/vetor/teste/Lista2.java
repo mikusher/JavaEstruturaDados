@@ -36,9 +36,9 @@ public class Lista2<T> extends EstruturaEstatica<T> {
 
 
     @Override
-    public boolean adiciona3(int posicao, T elemento) {
+    public boolean adicionaPos(int posicao, T elemento) {
 
-        return super.adiciona3(posicao, elemento);
+        return super.adicionaPos(posicao, elemento);
     }
 
 

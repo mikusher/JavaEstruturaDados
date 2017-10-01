@@ -87,9 +87,9 @@ public class EstruturaEstatica<T> {
 
 
     // inserir um elemento em qualquer posição do Vetor
-    protected boolean adiciona3(int posicao, T elemento) {
+    protected boolean adicionaPos(int posicao, T elemento) {
 
-        if (!(posicao >= 0 && posicao < this.tamanho)) {
+        if ((posicao >= 0 && posicao < this.tamanho)) {
             throw new IllegalArgumentException("Posição Invalida");
         }
 
@@ -102,6 +102,21 @@ public class EstruturaEstatica<T> {
         this.tamanho++;
 
         return true;
+    }
+
+
+
+
+
+    protected void remove(int posicao) {
+
+        if (!(posicao >= 0 && posicao < this.tamanho)) {
+            throw new IllegalArgumentException("Posição Invalida");
+        }
+        for (int i = posicao; i < this.tamanho - 1; i++) {
+            this.elementos[i] = this.elementos[i + 1];
+        }
+        this.tamanho--;
     }
 
 
