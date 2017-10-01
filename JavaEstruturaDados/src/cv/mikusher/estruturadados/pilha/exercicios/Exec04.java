@@ -48,13 +48,13 @@ public class Exec04 {
         Livro livro5 = new Livro();
         livro5.setNome("Pensamento");
         livro5.setAutor("Tavares");
-        livro5.setAnoLancamento("2010");
+        livro5.setAnoLancamento("2011");
         livro5.setIsbn("0392423");
 
         Livro livro6 = new Livro();
         livro6.setNome("Estrutura");
         livro6.setAutor("Neves");
-        livro6.setAnoLancamento("2017");
+        livro6.setAnoLancamento("2013");
         livro6.setIsbn("0392423");
 
         System.out.println("A pilha esta vazia? " + pilha.isEmpty());
